@@ -14,7 +14,6 @@ const noop: any = () => {
 
 @Component({
   selector: 'td-text-editor',
-  encapsulation: ViewEncapsulation.None,
   templateUrl: './text-editor.component.html',
   styleUrls: [ './text-editor.component.scss' ],
   providers: [{
