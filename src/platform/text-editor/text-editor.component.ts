@@ -5,7 +5,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { EscapeHtmlPipe } from './escape-html.pipe';
 import * as SimpleMDECss from 'simplemde/dist/simplemde.min.css';
 import * as SimpleMDE from 'simplemde';
 
@@ -79,7 +78,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   ngAfterViewInit(): void {
     if (this._document) {
       let styleElement: HTMLElement = this._document.createElement('style');
-      styleElement.innerHTML = new EscapeHtmlPipe(this._domSanitizer).transform(String(SimpleMDECss));
+      styleElement.innerHTML = <string>this._domSanitizer.bypassSecurityTrustHtml(String(SimpleMDECss));
       this._document.head.appendChild(styleElement);
     }
     this.options.element = this._elementRef.nativeElement.value;

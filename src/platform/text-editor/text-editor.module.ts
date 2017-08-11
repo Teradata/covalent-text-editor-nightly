@@ -3,7 +3,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TdTextEditorComponent } from './text-editor.component';
-import { EscapeHtmlPipe } from './escape-html.pipe';
 
 @NgModule({
   imports: [
@@ -11,7 +10,6 @@ import { EscapeHtmlPipe } from './escape-html.pipe';
   ],
   declarations: [
     TdTextEditorComponent,
-    EscapeHtmlPipe,
   ],
   exports: [
     TdTextEditorComponent,
