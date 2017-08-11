@@ -1,8 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild,
-         ElementRef, forwardRef, ViewEncapsulation, NgZone } from '@angular/core';
+         ElementRef, forwardRef, ViewEncapsulation, NgZone, Inject } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { EscapeHtmlPipe } from './escape-html.pipe';
 import * as SimpleMDECss from 'simplemde/dist/simplemde.min.css';
 import * as SimpleMDE from 'simplemde';
 
@@ -14,7 +17,7 @@ const noop: any = () => {
   selector: 'td-text-editor',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './text-editor.component.html',
-  styles: [ SimpleMDECss ],
+  styleUrls: [ './text-editor.component.scss' ],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => TdTextEditorComponent),
@@ -30,11 +33,10 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   @ViewChild('simplemde') textarea: ElementRef;
   @Input() options: any = {};
 
-  /**
-   * Set if using Electron mode when object is created
-   */
-  constructor(private elementRef: ElementRef,
-              private zone: NgZone) {}
+  constructor(private _elementRef: ElementRef,
+              private _zone: NgZone,
+              private _domSanitizer: DomSanitizer,
+              @Inject(DOCUMENT) private _document: any) {}
 
   /* tslint:disable-next-line */
   propagateChange = (_: any) => {};
@@ -53,7 +55,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
       }
       this.propagateChange(this._value);
       this._fromEditor = false;
-      this.zone.run(() => this._value = value);
+      this._zone.run(() => this._value = value);
     }
   }
 
@@ -75,7 +77,12 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   }
 
   ngAfterViewInit(): void {
-    this.options.element = this.elementRef.nativeElement.value;
+    if (this._document) {
+      let styleElement: HTMLElement = this._document.createElement('style');
+      styleElement.innerHTML = new EscapeHtmlPipe(this._domSanitizer).transform(String(SimpleMDECss));
+      this._document.head.appendChild(styleElement);
+    }
+    this.options.element = this._elementRef.nativeElement.value;
     this._simpleMDE = new SimpleMDE(this.options);
     this._simpleMDE.value(this.value);
     this._simpleMDE.codemirror.on('change', () => {
