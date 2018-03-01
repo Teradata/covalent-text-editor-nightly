@@ -16,7 +16,7 @@
       "../node_modules/@types"
     ],
     "paths": {
-      "@covalent/core/*": ["./platform/test-editor/*"]
+      "@covalent/text-editor/*": ["./platform/text-editor/*"]
     },
     "noUnusedParameters": false,
     "noUnusedLocals": false,
