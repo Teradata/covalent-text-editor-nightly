@@ -35,8 +35,8 @@
     "finish-release": "bash scripts/finish-release"
   },
   "engines": {
-    "node": ">=6.9",
-    "npm": ">3"
+    "node": ">=8.9",
+    "npm": ">=5.5"
   },
   "repository": {
     "type": "git",
