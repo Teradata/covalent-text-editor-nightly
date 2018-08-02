@@ -1,11 +1,9 @@
-import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild,
-         ElementRef, forwardRef, ViewEncapsulation, NgZone, Inject } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild, ElementRef, forwardRef, NgZone, Inject } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/platform-browser';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 import * as SimpleMDE from 'simplemde';
+// import * as SimpleMDECss from ' simplemde/dist/simplemde.min.css';
 // get access to the marked class under simplemde
 import * as marked from 'marked';
 // using 'import * as' not working in Angular 5 for some reason
