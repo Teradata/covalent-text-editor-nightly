@@ -68,8 +68,7 @@
     "rxjs": "^6.2.2",
     "showdown": "1.6.4",
     "simplemde": "^1.11.2",
-    "zone.js": "^0.8.17",
-    "rxjs-compat": "^6.0.0-rc.0"
+    "zone.js": "^0.8.17"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.8",
