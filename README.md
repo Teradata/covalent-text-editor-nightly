@@ -7,6 +7,8 @@
 
 <img alt="Covalent" src="https://gitcdn.link/repo/Teradata/covalent/develop/src/assets/icons/covalent.svg" width="150">
 
+NOTE: For Angular 8 use version 2.1.0 or higher.
+
 Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular 2 and Material Design.
 
 Covalent-Text-Editor is an Angular Component for text and markdown editing based on Covalent and SimpleMDE. The component can run in both Electron and Web Browsers.
