@@ -29,7 +29,7 @@ export class TdTextEditorComponent implements AfterViewInit, ControlValueAccesso
   private _simpleMDE: any;
   private _fromEditor: boolean = false;
 
-  @ViewChild('simplemde') textarea: ElementRef;
+  @ViewChild('simplemde', { static: false }) textarea: ElementRef;
   @Input() options: any = {};
 
   constructor(private _elementRef: ElementRef,
