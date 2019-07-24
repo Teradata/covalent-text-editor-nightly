@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+export { TdTextEditorComponent } from './text-editor.component';
+export { CovalentTextEditorModule } from './text-editor.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bjb3ZhbGVudC90ZXh0LWVkaXRvci8iLCJzb3VyY2VzIjpbInB1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxxQkFBcUIsRUFBRSxNQUFNLHlCQUF5QixDQUFDO0FBQ2hFLE9BQU8sRUFBRSx3QkFBd0IsRUFBRSxNQUFNLHNCQUFzQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IHsgVGRUZXh0RWRpdG9yQ29tcG9uZW50IH0gZnJvbSAnLi90ZXh0LWVkaXRvci5jb21wb25lbnQnO1xuZXhwb3J0IHsgQ292YWxlbnRUZXh0RWRpdG9yTW9kdWxlIH0gZnJvbSAnLi90ZXh0LWVkaXRvci5tb2R1bGUnO1xuIl19
