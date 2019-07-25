@@ -49,7 +49,7 @@ class TdTextEditorComponent {
             }
             this.propagateChange(this._value);
             this._fromEditor = false;
-            this._zone.run(() => this._value = value);
+            this._zone.run(() => (this._value = value));
         }
     }
     /**
@@ -70,7 +70,7 @@ class TdTextEditorComponent {
      * @return {?}
      */
     writeValue(value) {
-        this.value = (!value) ? '' : value;
+        this.value = !value ? '' : value;
     }
     /**
      * @param {?} fn
@@ -261,12 +261,14 @@ class TdTextEditorComponent {
 TdTextEditorComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-text-editor',
-                template: "<div>\n<textarea #simplemde></textarea>\n</div>\n",
-                providers: [{
+                template: "<div>\n  <textarea #simplemde></textarea>\n</div>\n",
+                providers: [
+                    {
                         provide: NG_VALUE_ACCESSOR,
                         useExisting: forwardRef(() => TdTextEditorComponent),
                         multi: true,
-                    }],
+                    },
+                ],
                 styles: [""]
             }] }
 ];
@@ -300,15 +302,9 @@ class CovalentTextEditorModule {
 }
 CovalentTextEditorModule.decorators = [
     { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    TdTextEditorComponent,
-                ],
-                exports: [
-                    TdTextEditorComponent,
-                ],
+                imports: [CommonModule],
+                declarations: [TdTextEditorComponent],
+                exports: [TdTextEditorComponent],
                 entryComponents: [],
                 bootstrap: [TdTextEditorComponent],
             },] }

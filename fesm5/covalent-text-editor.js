@@ -55,7 +55,7 @@ var TdTextEditorComponent = /** @class */ (function () {
                 }
                 this.propagateChange(this._value);
                 this._fromEditor = false;
-                this._zone.run(function () { return _this._value = value; });
+                this._zone.run(function () { return (_this._value = value); });
             }
         },
         enumerable: true,
@@ -85,7 +85,7 @@ var TdTextEditorComponent = /** @class */ (function () {
      * @return {?}
      */
     function (value) {
-        this.value = (!value) ? '' : value;
+        this.value = !value ? '' : value;
     };
     /**
      * @param {?} fn
@@ -364,12 +364,14 @@ var TdTextEditorComponent = /** @class */ (function () {
     TdTextEditorComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-text-editor',
-                    template: "<div>\n<textarea #simplemde></textarea>\n</div>\n",
-                    providers: [{
+                    template: "<div>\n  <textarea #simplemde></textarea>\n</div>\n",
+                    providers: [
+                        {
                             provide: NG_VALUE_ACCESSOR,
                             useExisting: forwardRef(function () { return TdTextEditorComponent; }),
                             multi: true,
-                        }],
+                        },
+                    ],
                     styles: [""]
                 }] }
     ];
@@ -409,15 +411,9 @@ var CovalentTextEditorModule = /** @class */ (function () {
     };
     CovalentTextEditorModule.decorators = [
         { type: NgModule, args: [{
-                    imports: [
-                        CommonModule,
-                    ],
-                    declarations: [
-                        TdTextEditorComponent,
-                    ],
-                    exports: [
-                        TdTextEditorComponent,
-                    ],
+                    imports: [CommonModule],
+                    declarations: [TdTextEditorComponent],
+                    exports: [TdTextEditorComponent],
                     entryComponents: [],
                     bootstrap: [TdTextEditorComponent],
                 },] }
