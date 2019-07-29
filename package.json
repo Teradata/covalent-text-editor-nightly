@@ -36,8 +36,8 @@
     "tslib": "^1.9.0"
   },
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
   },
   "main": "bundles/covalent-text-editor.umd.js",
   "module": "fesm5/covalent-text-editor.js",

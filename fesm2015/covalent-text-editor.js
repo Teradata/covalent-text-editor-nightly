@@ -1,21 +1,24 @@
+import { Component, forwardRef, ElementRef, NgZone, Inject, ViewChild, Input, NgModule } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DOCUMENT, CommonModule } from '@angular/common';
 import * as SimpleMDE from 'simplemde';
 import { setOptions } from 'marked';
-import { Component, Input, ViewChild, ElementRef, forwardRef, NgZone, Inject, NgModule } from '@angular/core';
-import { DOCUMENT, CommonModule } from '@angular/common';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable-next-line */
 /** @type {?} */
 let SimpleMDECss = require('simplemde/dist/simplemde.min.css');
 /** @type {?} */
-const noop = () => {
+const noop = (/**
+ * @return {?}
+ */
+() => {
     // empty method
-};
+});
 class TdTextEditorComponent {
     /**
      * @param {?} _elementRef
@@ -32,8 +35,15 @@ class TdTextEditorComponent {
         this._fromEditor = false;
         this.options = {};
         /* tslint:disable-next-line */
-        this.propagateChange = (_) => { };
-        this.onTouched = () => noop;
+        this.propagateChange = (/**
+         * @param {?} _
+         * @return {?}
+         */
+        (_) => { });
+        this.onTouched = (/**
+         * @return {?}
+         */
+        () => noop);
     }
     /**
      * value?: string
@@ -49,7 +59,10 @@ class TdTextEditorComponent {
             }
             this.propagateChange(this._value);
             this._fromEditor = false;
-            this._zone.run(() => (this._value = value));
+            this._zone.run((/**
+             * @return {?}
+             */
+            () => (this._value = value)));
         }
     }
     /**
@@ -101,10 +114,13 @@ class TdTextEditorComponent {
         setOptions({ sanitize: true });
         this._simpleMDE = new SimpleMDE(this.options);
         this._simpleMDE.value(this.value);
-        this._simpleMDE.codemirror.on('change', () => {
+        this._simpleMDE.codemirror.on('change', (/**
+         * @return {?}
+         */
+        () => {
             this._fromEditor = true;
             this.writeValue(this._simpleMDE.value());
-        });
+        }));
     }
     /* Wrapped function provided by SimpleMDE */
     /**
@@ -265,7 +281,10 @@ TdTextEditorComponent.decorators = [
                 providers: [
                     {
                         provide: NG_VALUE_ACCESSOR,
-                        useExisting: forwardRef(() => TdTextEditorComponent),
+                        useExisting: forwardRef((/**
+                         * @return {?}
+                         */
+                        () => TdTextEditorComponent)),
                         multi: true,
                     },
                 ],
@@ -280,14 +299,14 @@ TdTextEditorComponent.ctorParameters = () => [
     { type: undefined, decorators: [{ type: Inject, args: [DOCUMENT,] }] }
 ];
 TdTextEditorComponent.propDecorators = {
-    textarea: [{ type: ViewChild, args: ['simplemde',] }],
+    textarea: [{ type: ViewChild, args: ['simplemde', { static: true },] }],
     options: [{ type: Input }],
     value: [{ type: Input, args: ['value',] }]
 };
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class CovalentTextEditorModule {
     /**
@@ -310,21 +329,5 @@ CovalentTextEditorModule.decorators = [
             },] }
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TdTextEditorComponent, CovalentTextEditorModule };
-
+export { CovalentTextEditorModule, TdTextEditorComponent };
 //# sourceMappingURL=covalent-text-editor.js.map
