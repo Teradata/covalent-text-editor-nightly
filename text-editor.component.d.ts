@@ -1,17 +1,13 @@
 import { AfterViewInit, ElementRef, NgZone } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { DomSanitizer } from '@angular/platform-browser';
 export declare class TdTextEditorComponent implements AfterViewInit, ControlValueAccessor {
-    private _elementRef;
     private _zone;
-    private _domSanitizer;
-    private _document;
     private _value;
     private _simpleMDE;
     private _fromEditor;
     textarea: ElementRef;
     options: any;
-    constructor(_elementRef: ElementRef, _zone: NgZone, _domSanitizer: DomSanitizer, _document: any);
+    constructor(_zone: NgZone);
     propagateChange: (_: any) => void;
     onTouched: () => any;
     /**
