@@ -3,7 +3,7 @@ import { ControlValueAccessor } from '@angular/forms';
 export declare class TdTextEditorComponent implements AfterViewInit, ControlValueAccessor {
     private _zone;
     private _value;
-    private _simpleMDE;
+    private _easyMDE;
     private _fromEditor;
     textarea: ElementRef;
     options: any;
@@ -15,7 +15,7 @@ export declare class TdTextEditorComponent implements AfterViewInit, ControlValu
      * Value in the Editor after async getEditorContent was called
      */
     value: string;
-    readonly simpleMDE: any;
+    readonly easyMDE: any;
     /**
      * Implemented as part of ControlValueAccessor.
      */
