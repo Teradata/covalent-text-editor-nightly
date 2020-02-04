@@ -32,7 +32,7 @@
     "Julie Knowles <julie.knowles@teradata.com>"
   ],
   "dependencies": {
-    "easymde": "undefined"
+    "easymde": "^2.8.0"
   },
   "peerDependencies": {
     "@angular/common": "^7.0.0 || ^8.0.0 || ^9.0.0",
