@@ -431,24 +431,11 @@ if (false) {
 var CovalentTextEditorModule = /** @class */ (function () {
     function CovalentTextEditorModule() {
     }
-    /**
-     * @return {?}
-     */
-    CovalentTextEditorModule.forRoot = /**
-     * @return {?}
-     */
-    function () {
-        return {
-            ngModule: CovalentTextEditorModule,
-            providers: [],
-        };
-    };
     CovalentTextEditorModule.decorators = [
         { type: NgModule, args: [{
                     imports: [CommonModule],
                     declarations: [TdTextEditorComponent],
                     exports: [TdTextEditorComponent],
-                    entryComponents: [],
                     bootstrap: [TdTextEditorComponent],
                 },] }
     ];

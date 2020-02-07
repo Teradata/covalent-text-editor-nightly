@@ -321,22 +321,12 @@ if (false) {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class CovalentTextEditorModule {
-    /**
-     * @return {?}
-     */
-    static forRoot() {
-        return {
-            ngModule: CovalentTextEditorModule,
-            providers: [],
-        };
-    }
 }
 CovalentTextEditorModule.decorators = [
     { type: NgModule, args: [{
                 imports: [CommonModule],
                 declarations: [TdTextEditorComponent],
                 exports: [TdTextEditorComponent],
-                entryComponents: [],
                 bootstrap: [TdTextEditorComponent],
             },] }
 ];

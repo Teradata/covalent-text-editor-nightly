@@ -431,24 +431,11 @@
     var CovalentTextEditorModule = /** @class */ (function () {
         function CovalentTextEditorModule() {
         }
-        /**
-         * @return {?}
-         */
-        CovalentTextEditorModule.forRoot = /**
-         * @return {?}
-         */
-        function () {
-            return {
-                ngModule: CovalentTextEditorModule,
-                providers: [],
-            };
-        };
         CovalentTextEditorModule.decorators = [
             { type: core.NgModule, args: [{
                         imports: [common.CommonModule],
                         declarations: [TdTextEditorComponent],
                         exports: [TdTextEditorComponent],
-                        entryComponents: [],
                         bootstrap: [TdTextEditorComponent],
                     },] }
         ];

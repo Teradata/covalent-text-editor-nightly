@@ -14,8 +14,9 @@ export declare class TdTextEditorComponent implements AfterViewInit, ControlValu
      * value?: string
      * Value in the Editor after async getEditorContent was called
      */
-    value: string;
-    readonly easyMDE: any;
+    set value(value: string);
+    get value(): string;
+    get easyMDE(): any;
     /**
      * Implemented as part of ControlValueAccessor.
      */
