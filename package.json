@@ -32,19 +32,17 @@
     "Julie Knowles <julie.knowles@teradata.com>"
   ],
   "dependencies": {
-    "easymde": "2.8.0"
+    "easymde": "2.8.0",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "tslib": "^1.10.0"
+    "@angular/common": "^9.0.0 || ^10.0.0-0",
+    "@angular/core": "^9.0.0 || ^10.0.0-0"
   },
   "main": "bundles/covalent-text-editor.umd.js",
-  "module": "fesm5/covalent-text-editor.js",
+  "module": "fesm2015/covalent-text-editor.js",
   "es2015": "fesm2015/covalent-text-editor.js",
-  "esm5": "esm5/covalent-text-editor.js",
   "esm2015": "esm2015/covalent-text-editor.js",
-  "fesm5": "fesm5/covalent-text-editor.js",
   "fesm2015": "fesm2015/covalent-text-editor.js",
   "typings": "covalent-text-editor.d.ts",
   "metadata": "covalent-text-editor.metadata.json",
